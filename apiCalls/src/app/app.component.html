@@ -1,0 +1,17 @@
+<form #f="ngForm" (ngSubmit)="submit(f.value)">
+    <label for="inputEmail">Email</label>
+    <input id="inputEmail">
+    <label for="inputPassword">Password</label>
+    <input id="inputPassword">
+    <button type="submit">Submit</button>
+</form>
+
+<div *ngFor="let item of people$|async">
+    <li>{{item.name}}</li>
+
+</div>
+
+
+
+
+<router-outlet></router-outlet>
