@@ -45,8 +45,22 @@ token = localStorage.getItem("token");
 getD(){
 
   var test = this.http.get('/assets/data.json');
+  test.subscribe(next=>{
+    console.log(typeof next);
+    console.log(next);
+    for(let outerKey in next){
+      // console.log(outerKey);
+      for(let innerKey in next[outerKey]){
+        console.log(innerKey);
+        
+      }
+    }
+
+
+  });
   
-  return test.pipe(map(res=>{return this.res=res.hasOwnProperty}))
+  
+  return test.pipe(map(res=>{return this.res=res}))
   
 
 }
