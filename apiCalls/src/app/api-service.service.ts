@@ -34,8 +34,6 @@ token = localStorage.getItem("token");
 
 
   getdata():Observable<object>{
-    
-    
     var jsonData = this.http.get('/assets/data.json');
     console.log(jsonData);
     
@@ -46,8 +44,8 @@ getD(){
 
   var test = this.http.get('/assets/data.json');
   test.subscribe(next=>{
-    console.log(typeof next);
-    console.log(next);
+    // console.log(typeof next);
+    // console.log(next);
     for(let outerKey in next){
       // console.log(outerKey);
       for(let innerKey in next[outerKey]){
